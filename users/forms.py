@@ -28,7 +28,7 @@ class UserProfileForm(forms.ModelForm):
 
 class UserUpdateForm(forms.ModelForm):
 	username = forms.CharField(max_length=50, required=False)
-	email = forms.EmailField(required=False)
+	email = forms.EmailField(required=False, widget=forms.TextInput(attrs={'readonly':'readonly'}))
 
 	class Meta:
 		model = User
