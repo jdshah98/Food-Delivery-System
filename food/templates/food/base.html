@@ -23,10 +23,9 @@
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top fixed-nav-bar">
             <div class="container">
-<!--                 <a class="navbar-brand mr-4" href="{% url 'food-home' %}">{{ app }}</a>
- -->                <a class="navbar-brand mr-4" href="{% url 'food-home' %}">
-                        <img class="logo-image" src="{% static 'food/img/logo.png' %}">
-                    </a>
+                <a class="navbar-brand mr-4" href="{% url 'food-home' %}">
+                    <img class="logo-image" src="{% static 'food/img/navbar/logo.png' %}">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                     aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,19 +33,19 @@
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
                         <a class="nav-link nav-item nav-align" href="{% url 'food-home' %}">
-                            <img class="home-img mr-1" src="{% static 'food/img/home.png'%}">
+                            <img class="home-img mr-1" src="{% static 'food/img/navbar/home.png'%}">
                             <span style="vertical-align: middle;margin-right: 10px">Home</span></a>
                         <a class="nav-link nav-item nav-align" href="{% url 'food-menu' %}">
-                            <img class="menu-img mr-1" src="{% static 'food/img/menu.png'%}">
+                            <img class="menu-img mr-1" src="{% static 'food/img/navbar/menu.png'%}">
                             <span style="vertical-align: middle;margin-right: 10px">Menu</span></a>
                         <a class="nav-link nav-item nav-align" href="{% url 'food-about' %}">
-                            <img class="about-img mr-1" src="{% static 'food/img/about.png'%}">
+                            <img class="about-img mr-1" src="{% static 'food/img/navbar/about.png'%}">
                             <span style="vertical-align: middle;margin-right: 10px">About</span></a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         <a class="nav-link nav-item nav-align" href="{% url 'food-cart' %}">
-                            <img class="cart-img mr-1" src="{% static 'food/img/cart.png'%}">
+                            <img class="cart-img mr-1" src="{% static 'food/img/navbar/cart.png'%}">
                             <span style="vertical-align: middle;margin-right: 10px">Cart</span>
                         </a>
                         {% if user.is_authenticated %}
@@ -58,7 +57,7 @@
                         </a>
                         {% else %}
                         <a class="nav-link nav-item nav-align" href="{% url 'login' %}">
-                            <img class="login-img" src="{% static 'food/img/user.png'%}">
+                            <img class="login-img" src="{% static 'food/img/navbar/user.png'%}">
                             <span style="vertical-align: middle;margin-right: 10px">
                                 Sign In
                             </span>
