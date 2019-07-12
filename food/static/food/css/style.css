@@ -168,6 +168,7 @@ footer>.container>.row>.col-sm-6>p {
 
 .brightness {
     -webkit-filter: brightness(50%);
+    filter: brightness(50%);
 }
 
 .carousel-inner img {
