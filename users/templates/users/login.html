@@ -43,7 +43,8 @@
             <!-- This is important for security purpose -->
             {% csrf_token %}
             <fieldset class="form-group">
-                {{ form|crispy }}
+                {{ form.username|as_crispy_field }}
+                <a class="forgot-password" href="#">Forgot Password?</a>
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-success btn-block py-2" type="submit">Login</button>

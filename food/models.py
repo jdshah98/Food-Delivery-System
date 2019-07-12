@@ -9,7 +9,3 @@ class Feedback(models.Model):
 
     def __str__(self):
     	return "Feedback : " + self.username
-
-
-class Food(models.Model):
-	
