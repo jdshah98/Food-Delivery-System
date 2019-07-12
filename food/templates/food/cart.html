@@ -1,0 +1,38 @@
+{% extends "food/base.html" %}
+{% block content %}
+    <div class="shopping-cart container">
+
+        <div class="column-labels">
+            <label class="shopping-label product-image">Image</label>
+            <label class="shopping-label product-details">Product</label>
+            <label class="shopping-label product-price">Price</label>
+            <label class="shopping-label product-quantity">Quantity</label>
+            <label class="shopping-label product-removal">Remove</label>
+            <label class="shopping-label product-line-price">Total</label>
+        </div>
+        <div class="products">
+
+        </div>
+        <div class="totals">
+            <div class="totals-item">
+                <label class="shopping-label">Subtotal</label>
+                <div class="totals-value" id="cart-subtotal">0.0</div>
+            </div>
+            <div class="totals-item">
+                <label class="shopping-label">Tax (5%)</label>
+                <div class="totals-value" id="cart-tax">0.0</div>
+            </div>
+            <div class="totals-item">
+                <label class="shopping-label">Shipping</label>
+                <div class="totals-value" id="cart-shipping">0.0</div>
+            </div>
+            <div class="totals-item totals-item-total">
+                <label class="shopping-label">Grand Total</label>
+                <div class="totals-value" id="cart-total">0.0</div>
+            </div>
+        </div>
+
+        <div class="checkout">Checkout</div>
+
+    </div>
+{% endblock content %}

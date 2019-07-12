@@ -1,0 +1,46 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>{{ app }} - {{ title }}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: rgb(250, 250, 250);
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'food/css/style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'food/img/favicon.png' %}">
+
+</head>
+
+<body id="myPage">
+
+    <div class="logout-logo text-center" style="width: 100%">
+        <a href="{% url 'food-home' %}" style="padding-right: 0px; color: #111111;font-weight: 400">
+            {{ app }}
+        </a>
+    </div>
+
+    <div class="col-lg-3 col-md-5 col-sm-6 logout-section ml-auto mr-auto text-center">
+        <p class="text-center sign-out">
+            You have been logged out
+        </p>
+        <a href="{% url 'login' %}" style="font-weight: 600; font-size: 16px;
+         padding: 10px 0px;color: rgba(27,27,27,.9);" class="btn btn-signout">Login Again</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

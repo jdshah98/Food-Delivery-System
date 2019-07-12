@@ -1,0 +1,41 @@
+{% extends "food/base.html" %}
+{% load crispy_forms_tags %}
+{% block style %}
+<style>
+    body {
+        background-color: rgb(250, 250, 250);
+    }
+</style>
+{% endblock style %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="content-form form">
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                <form method="POST">
+                    <!-- This is important for security purpose -->
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom" style="padding-bottom: 10px">Give Us Feedback</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group" style="width:25%">
+                        <button class="btn btn-outline-info btn-block" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+{% endblock content %}
