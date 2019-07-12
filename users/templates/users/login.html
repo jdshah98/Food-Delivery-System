@@ -24,14 +24,14 @@
 <body id="myPage">
 
     <div class="login-logo text-center" style="width: 100%">
-        <a href="{% url 'food-home' %}"><img class="logo-image-login" src="{% static 'food/img/logo_login.png' %}"></a>
+        <a href="{% url 'food-home' %}"><img class="logo-image-login" src="{% static 'food/img/navbar/logo_login.png' %}"></a>
         <p>Sign in to 
             <span style="padding-right: 0px; color: #111111;font-weight: 400">
                 {{ app }}
             </span>
         </p>
     </div>
-    <div class="content-login col-sm-3 login-form ml-auto mr-auto">
+    <div class="content-login col-md-3 col-sm-6 col-xs-8 login-form ml-auto mr-auto">
         {% if messages %}
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">
@@ -44,7 +44,10 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 {{ form.username|as_crispy_field }}
-                <a class="forgot-password" href="#">Forgot Password?</a>
+                <div>
+                    {{ form.password|as_crispy_field }}
+                    <a class="forgot-password" href="#"><img>Forgot Password?</a>
+                </div>
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-success btn-block py-2" type="submit">Login</button>

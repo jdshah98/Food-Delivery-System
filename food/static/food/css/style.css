@@ -587,3 +587,7 @@ a:hover {
 .nav-link{
     padding-left: 0rem !important;
 }
+
+.forgot-password{
+    font-size: 14px;
+}
