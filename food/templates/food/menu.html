@@ -1,11 +1,35 @@
 {% extends "food/base.html" %}
 {% load static %}
 {% block content %}
-    <div class="tablink" id="chinese">Chinese</div>
-    <div class="tablink" id="south">South Indian</div>
-    <div class="tablink" id="punjabi">Punjabi</div>
-    <div class="tablink" id="gujarati">Gujarati</div>
-    <div class="tablink" id="american">American</div>
+
+	<div class="content-menu">
+		<div class="col-sm-3">
+			<div class="tabs-menu">
+			    <div class="tablink" id="chinese">Chinese</div>
+			    <div class="tablink" id="south">South Indian</div>
+			    <div class="tablink" id="punjabi">Punjabi</div>
+			    <div class="tablink" id="gujarati">Gujarati</div>
+			    <div class="tablink" id="american">American</div>
+			</div>			
+		</div>
+		<div class="col-sm-9">
+<!-- 			{% for item in menu %}
+				<div class="col-md-4 item-div-' + element['fid'] + '">
+					<div class="card shadow-lg p-0 mb-4 bg-light">
+						<img class="card-img-top" src="./' + element['url'] + '">
+						<div class="card-body">
+							<p>' + element['name'] + '</p>
+							<p>' + element['cost'] + '</p>
+							<a href="#" onclick="cartItemCheckoutClick(this)" class="btn btn-outline-secondary ' + element['fid'] + '" id="'+element['fid']+'">Add to Cart
+							</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %} -->
+		</div>
+	</div>
+
+	</div>
 
 <!-- Menu Goes Here -->
 

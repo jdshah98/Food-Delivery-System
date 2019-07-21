@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import FeedbackForm
 from django.contrib import messages
 from django.conf import settings
-
-
 from django.views import View
+from users.models import User
 
 # Create your views here.
 app = settings.APP_NAME

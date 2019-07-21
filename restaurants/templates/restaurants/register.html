@@ -6,7 +6,7 @@
 			<!-- This is important for security purpose -->
 			{% csrf_token %}
 			<fieldset class="form-group">
-				<legend class="border-bottom mb-4">Join Today</legend>
+				<legend class="border-bottom mb-4 pb-2">Join Today</legend>
 				<div class="form-row">
 					<div class="form-group col-md-6 mb-0">
 						{{ form.username|as_crispy_field }}
@@ -24,7 +24,7 @@
 		</form>
 		<div class="border-top pt-3">
 			<small class="text-muted">
-				Already Have An Acoount? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+				Already Have An Acoount? <a class="ml-2" href="{% url 'rest-login' %}">Sign In</a>
 			</small>
 		</div>
 	</div>

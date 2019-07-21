@@ -15,7 +15,6 @@ body{
 
 .navbar {
     z-index: 4;
-    padding: 10px;
     border-bottom: 2px solid coral;
 }
 
@@ -99,6 +98,10 @@ a:focus {
 .login-create>.form-group>p{
     font-size: 15px;
     margin-bottom: 0rem;
+}
+
+.floating-button{
+    
 }
 
 footer {
@@ -189,53 +192,6 @@ footer>.container>.row>.col-sm-6>p {
     font-size: 600%;
     text-transform: capitalize;
     text-shadow: 1px 1px 10px #000000;
-}
-
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: red;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content {
-    z-index: 9999;
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 .main-logo {
@@ -590,4 +546,26 @@ a:hover {
 
 .forgot-password{
     font-size: 14px;
+}
+
+/*menu.html*/
+
+.content-menu{
+    width: 90%;
+}
+
+.tabs-menu{
+    margin: 90px 10px 20px 10px;
+}
+
+.tablink{
+    text-align: center;
+    padding: 10px;
+    background-color: coral;
+    color: #ffffff;
+}
+
+.tablink:active{
+    background-color: #800080;
+    color: #ffffff;
 }
