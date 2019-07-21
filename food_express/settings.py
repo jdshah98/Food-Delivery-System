@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'food.apps.FoodConfig',
     'users.apps.UsersConfig',
-    'restaurants.apps.RestaurantsConfig',
     'fontawesome',
     'crispy_forms',
     'django.contrib.admin',

@@ -8,7 +8,7 @@ class UserType(models.Model):
 	usertype = models.CharField(max_length=50, default="user")
 	
 	def __str__(self):
-		return self.usertype
+		return self.user.username + " : " + self.usertype
 
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)

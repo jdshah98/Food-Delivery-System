@@ -6,10 +6,9 @@ from .models import Profile, UserType
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
-        UserType.objects.create(user=instance)
+        UserType.objects.create(user=instance,usertype="restaurant")
         Profile.objects.create(user=instance)
         
-
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
