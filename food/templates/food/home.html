@@ -83,6 +83,14 @@
         </div>
     </div>
 
+    {% if not user.is_authenticated %}
+        <div style="position: fixed; right: 0px;bottom: 2%;z-index: 2;padding:1em;text-align:center">
+            <a href="/restaurant/">
+                <img width="80px" height="80px" title="Join Us" src="{% static 'food/img/restaurant.png' %}">
+            </a>
+        </div>
+    {% endif %}
+
     <!-- Food Special Offers Menu -->
     <div class="container-fluid">
         <div class="heading text-center">

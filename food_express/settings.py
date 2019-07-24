@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -27,13 +26,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 # Declare your all apps here
 INSTALLED_APPS = [
     'food.apps.FoodConfig',
     'users.apps.UsersConfig',
+    'restaurants.apps.RestaurantsConfig',
     'fontawesome',
     'crispy_forms',
     'django.contrib.admin',
@@ -71,14 +70,13 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # Here declare the files that include global constants
                 # for accessing them in template files
-                # 'users.context_processors.global_settings',
+                # 'restaurants.context_processors.global_settings',
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'food_express.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -89,7 +87,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -109,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -123,8 +119,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
@@ -137,17 +131,16 @@ APP_NAME = 'Food Express'
 # Declaring the Crispy tags using bootstrap4
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# For redirecting unathenticated users to login page when request for login required pages
-# is made by users
+# For redirecting unathenticated restaurants to login page when request for login required pages
+# is made by restaurants
 LOGIN_URL = 'login'
 
-# After Login redirecting users to a profile page
-# or redirecting users to restrict accessing login page after logged In
+# After Login redirecting restaurants to a profile page
+# or redirecting restaurants to restrict accessing login page after logged In
 LOGIN_REDIRECT_URL = 'food-home'
 
 LOGOUT_URL = 'login'
-# LOGOUT_REDIRECT_URL = 'food-home'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'

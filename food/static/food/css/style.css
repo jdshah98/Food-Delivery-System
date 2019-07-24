@@ -7,14 +7,7 @@ body{
     min-height: 100%;
 }
 
-.container-fluid {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
 .navbar {
-    z-index: 4;
     border-bottom: 2px solid coral;
 }
 
@@ -28,14 +21,6 @@ body{
 
 a:focus {
     text-decoration: none;
-}
-
-.fixed-nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    width: 100%;
 }
 
 .bg-steel {
@@ -504,7 +489,7 @@ a:hover {
 
 .register-form,
 .profile-form {
-    margin: 130px auto 50px auto;
+    margin-right: 10%;
     border: 1px solid #efefef;
     padding: 30px 40px;
     background-color: #ffffff;
@@ -568,4 +553,31 @@ a:hover {
 .tablink:active{
     background-color: #800080;
     color: #ffffff;
+}
+
+/*Add food_form.html*/
+
+.content-base-profile{
+    margin: 120px auto 50px 50px;
+}
+
+.content-food-add{
+    border: 1px solid #efefef;
+    padding: 50px;
+    margin-right: 10%;
+}
+
+.btn-add{
+    padding: 10px 30px;
+}
+
+.side-group{
+    list-style-type: none;
+    border: 1px solid #dddddd;
+    padding:0px;
+}
+
+.list-item{
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
 }

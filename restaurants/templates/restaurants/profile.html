@@ -1,0 +1,56 @@
+{% extends "restaurants/base_profile.html" %}
+{% load crispy_forms_tags %}
+{% block profile_content %}
+
+<div class="profile-form">
+    <!-- Message Structure -->
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- Form -->
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+        </div>
+        <a class="btn btn-outline-danger" href="{% url 'logout' %}">
+            <span style="vertical-align: middle">
+                Log Out
+            </span>
+        </a>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+        <!-- This is important for security purpose -->
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                    {{ form.restaurant_name|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-6 mb-0">
+                    {{ form.manager_name|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0">
+                    {{ form.mobile|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-6 mb-0">
+                    {{ form.phone|as_crispy_field }}
+                </div>
+            </div>
+            {{ form.image|as_crispy_field }}
+            <div class="form-row">
+                <button class="btn btn-outline-success btn-save" type="submit">Save</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+{% endblock profile_content %}

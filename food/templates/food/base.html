@@ -19,87 +19,90 @@
 </head>
 
 <body id="myPage">
-    <!-- Navigation -->
-    <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top fixed-nav-bar">
-            <div class="container">
-                <a class="navbar-brand mr-4" href="{% url 'food-home' %}">
-                    <img class="logo-image" src="{% static 'food/img/navbar/logo.png' %}">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+<!-- Navigation -->
+<header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top fixed-nav-bar">
+        <div class="container">
+            <a class="navbar-brand mr-4" href="{% url 'food-home' %}">
+                <img class="logo-image" src="{% static 'food/img/navbar/logo.png' %}">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                     aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarToggle">
-                    <div class="navbar-nav mr-auto">
-                        <a class="nav-link nav-item nav-align" href="{% url 'food-home' %}">
-                            <img class="home-img mr-1" src="{% static 'food/img/navbar/home.png'%}">
-                            <span style="vertical-align: middle;margin-right: 10px">Home</span></a>
-                        <a class="nav-link nav-item nav-align" href="{% url 'food-menu' %}">
-                            <img class="menu-img mr-1" src="{% static 'food/img/navbar/menu.png'%}">
-                            <span style="vertical-align: middle;margin-right: 10px">Menu</span></a>
-                        <a class="nav-link nav-item nav-align" href="{% url 'food-about' %}">
-                            <img class="about-img mr-1" src="{% static 'food/img/navbar/about.png'%}">
-                            <span style="vertical-align: middle;margin-right: 10px">About</span></a>
-                    </div>
-                    <!-- Navbar Right Side -->
-                    <div class="navbar-nav">
-                        <a class="nav-link nav-item nav-align" href="{% url 'food-cart' %}">
-                            <img class="cart-img mr-1" src="{% static 'food/img/navbar/cart.png'%}">
-                            <span style="vertical-align: middle;margin-right: 10px">Cart</span>
-                        </a>
-                        {% if user.is_authenticated %}
-                        <a class="nav-link nav-item nav-align" href="{% url 'profile' %}">
-                            <img class="rounded-circle profile-photo mr-1" src="{{ user.profile.image.url }}">
-                            <span style="vertical-align: middle;margin-right: 10px">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-link nav-item nav-align" href="{% url 'food-home' %}">
+                        <img class="home-img mr-1" src="{% static 'food/img/navbar/home.png'%}">
+                        <span style="vertical-align: middle;margin-right: 10px">Home</span>
+                    </a>
+                    <a class="nav-link nav-item nav-align" href="{% url 'food-menu' %}">
+                        <img class="menu-img mr-1" src="{% static 'food/img/navbar/menu.png'%}">
+                        <span style="vertical-align: middle;margin-right: 10px">Menu</span>
+                    </a>
+                    <a class="nav-link nav-item nav-align" href="{% url 'food-about' %}">
+                        <img class="about-img mr-1" src="{% static 'food/img/navbar/about.png'%}">
+                        <span style="vertical-align: middle;margin-right: 10px">About</span>
+                    </a>
+                </div>
+                <!-- Navbar Right Side -->
+                <div class="navbar-nav">
+                    <a class="nav-link nav-item nav-align" href="{% url 'food-cart' %}">
+                        <img class="cart-img mr-1" src="{% static 'food/img/navbar/cart.png'%}">
+                        <span style="vertical-align: middle;margin-right: 10px">Cart</span>
+                    </a>
+                    {% if user.is_authenticated %}
+                    <a class="nav-link nav-item nav-align" href="{% url 'profile' %}">
+                        <img class="rounded-circle profile-photo mr-1" src="{{ user.profile.image.url }}">
+                        <span style="vertical-align: middle;margin-right: 10px">
                                 {{ user.username }}
                             </span>
-                        </a>
-                        {% else %}
-                        <a class="nav-link nav-item nav-align" href="{% url 'login' %}">
-                            <img class="login-img" src="{% static 'food/img/navbar/user.png'%}">
-                            <span style="vertical-align: middle;margin-right: 10px">
+                    </a>
+                    {% else %}
+                    <a class="nav-link nav-item nav-align" href="{% url 'login' %}">
+                        <img class="login-img" src="{% static 'food/img/navbar/user.png'%}">
+                        <span style="vertical-align: middle;margin-right: 10px">
                                 Sign In
                             </span>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    {% block content %}{% endblock %}
-
-    <footer class="bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <p>Copyright &copy; 2019</p>
-                </div>
-                <div class="col-sm-6 text-right font-icons">
-                    <a href="https://www.facebook.com/profile.php?id=100008100278203">
-                        <i class='fab social-links'>&#xf39e;</i>
                     </a>
-                    <a href="https://www.linkedin.com/in/jainam-shah-26875b129/">
-                        <i class='fab social-links'>&#xf0e1;</i>
-                    </a>
-                    <a href="https://www.instagram.com/jainam2198/">
-                        <i class='fab social-links'>&#xf16d;</i>
-                    </a>
-                    <a href="https://twitter.com/JainamS74646319">
-                        <i class='fab social-links'>&#xf099;</i>
-                    </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
-    </footer>
+    </nav>
+</header>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{% static 'food/js/main.js' %}"></script>
+{% block content %}{% endblock %}
+
+<footer class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p>Copyright &copy; 2019</p>
+            </div>
+            <div class="col-sm-6 text-right font-icons">
+                <a href="https://www.facebook.com/profile.php?id=100008100278203">
+                    <i class='fab social-links'>&#xf39e;</i>
+                </a>
+                <a href="https://www.linkedin.com/in/jainam-shah-26875b129/">
+                    <i class='fab social-links'>&#xf0e1;</i>
+                </a>
+                <a href="https://www.instagram.com/jainam2198/">
+                    <i class='fab social-links'>&#xf16d;</i>
+                </a>
+                <a href="https://twitter.com/JainamS74646319">
+                    <i class='fab social-links'>&#xf099;</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

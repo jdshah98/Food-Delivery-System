@@ -1,0 +1,27 @@
+{% extends "restaurants/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<div class="content-base-profile">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="sidebar">
+                <ul class="side-group">
+                    <li class="list-item">PROFILE</li>
+                    <li class="list-item">ADD NEW ITEMS</li>
+                    <li class="list-item">DELETE ITEMS</li>
+                    <li class="list-item">UPDATE ITEMS</li>
+                    <li class="list-item">LIST ITEMS</li>
+                    <li class="list-item">ORDER LIST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            {% block profile_content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
