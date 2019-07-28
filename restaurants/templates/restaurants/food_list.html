@@ -1,0 +1,28 @@
+{% extends "restaurants/base_profile.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block profile_content %}
+
+	<div class="content-food-list">
+        <table class="table-striped" width="100%">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Cost</th>
+                <th>Image</th>
+            </tr>
+
+            {% for food in foods %}
+                <tr>
+                    <td>food.name</td>
+                    <td>food.description</td>
+                    <td>food.category</td>
+                    <td>food.cost</td>
+                    <td>food.image</td>
+                </tr>
+            {% endfor %}
+        </table>
+	</div>
+
+{% endblock profile_content %}

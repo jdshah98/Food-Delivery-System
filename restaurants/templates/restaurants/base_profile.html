@@ -3,16 +3,16 @@
 {% load static %}
 {% block content %}
 
-<div class="content-base-profile">
+<div class="container-fluid content-base-profile">
     <div class="row">
         <div class="col-sm-3">
             <div class="sidebar">
                 <ul class="side-group">
-                    <li class="list-item">PROFILE</li>
-                    <li class="list-item">ADD NEW ITEMS</li>
+                    <li class="list-item list-profile"><a href="{% url 'rest-profile' %}">PROFILE</a></li>
+                    <li class="list-item list-new"><a href="#">ADD NEW ITEMS</a></li>
                     <li class="list-item">DELETE ITEMS</li>
                     <li class="list-item">UPDATE ITEMS</li>
-                    <li class="list-item">LIST ITEMS</li>
+                    <li class="list-item list-list"><a href="#">LIST ITEMS</a></li>
                     <li class="list-item">ORDER LIST</li>
                 </ul>
             </div>
@@ -25,3 +25,15 @@
 </div>
 
 {% endblock content %}
+
+{% block script %}
+    <script type="text/javascript">
+        {% if "profile" in request.path %}
+            $('.list-profile').addClass('list-item-active');
+        {% elif "add" in request.path %}
+            $('.list-new').addClass('list-item-active');
+        {% elif "list" in request.path %}
+            $('.list-list').addClass('list-item-active');
+        {% endif %}
+    </script>
+{% endblock script %}

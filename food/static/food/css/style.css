@@ -7,6 +7,20 @@ body{
     min-height: 100%;
 }
 
+/* navigation bar */
+
+.site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+}
+
 .navbar {
     border-bottom: 2px solid coral;
 }
@@ -19,24 +33,9 @@ body{
     font-size: 16px !important;
 }
 
-a:focus {
-    text-decoration: none;
-}
 
 .bg-steel {
     background-color: #5f788a;
-}
-
-.site-header .navbar-nav .nav-link {
-    color: #cbd5db;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
-}
-
-.site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
 }
 
 .content-home {
@@ -489,9 +488,8 @@ a:hover {
 
 .register-form,
 .profile-form {
-    margin-right: 10%;
     border: 1px solid #efefef;
-    padding: 30px 40px;
+    padding: 50px;
     background-color: #ffffff;
 }
 
@@ -558,13 +556,13 @@ a:hover {
 /*Add food_form.html*/
 
 .content-base-profile{
-    margin: 120px auto 50px 50px;
+    margin: 120px 0px 50px 0px;
+    padding: 0px 50px;
 }
 
 .content-food-add{
     border: 1px solid #efefef;
     padding: 50px;
-    margin-right: 10%;
 }
 
 .btn-add{
@@ -580,4 +578,13 @@ a:hover {
 .list-item{
     padding: 10px;
     border-bottom: 1px solid #dddddd;
+    color: #000000;
+}
+
+.list-item>a{
+    color: #000000;
+}
+
+.list-item-active{
+    border-left: 2px solid coral;
 }

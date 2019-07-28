@@ -1,12 +1,10 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .forms import RestRegisterForm, RestProfileForm
+from .forms import RestRegisterForm, RestProfileForm, RestFoodForm
 from django.contrib import messages
 from food.forms import FeedbackForm
 from users.models import UserType
 from django.contrib.auth.models import User
-from django.views.generic import CreateView
-from .models import Food
 
 # Create your views here.
 app = settings.APP_NAME
@@ -65,10 +63,13 @@ def profile(request):
     return render(request, 'restaurants/profile.html', {'title': 'profile', 'app': app, 'form': p_form})
 
 
-class FoodAddView(CreateView):
-    model = Food
-    fields = ['name', 'description', 'category', 'cost', 'image']
-
-    def form_valid(self, form):
-        form.instance.restaurant = self.request.user
-        return super().form_valid(form)
+def food_create(request):
+    if request.method == 'POST':
+        food_form = RestFoodForm(request.POST, request.FILES, instance=request.food)
+        if food_form.is_valid():
+            food_form.save()
+            messages.success(request, f'Your Profile has been Updated Successfully!')
+            return redirect('rest-add')
+    else:
+        food_form = RestFoodForm(instance=request.food)
+    return render(request, 'restaurants/food_form.html', {'title': 'profile', 'app': app, 'form': food_form})

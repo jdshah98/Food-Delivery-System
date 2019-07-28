@@ -24,3 +24,15 @@ class RestProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(RestProfileForm, self).__init__(*args, **kwargs)
         self.fields['image'].required = False
+
+
+class RestFoodForm(forms.ModelForm):
+    name = forms.CharField(max_length=30, required=True)
+    description = forms.CharField(max_length=255,required=True)
+    category = forms.CharField(max_length=30, required=True)
+    cost = forms.CharField(max_length=10, required=True)
+    image = forms.ImageField(required=True)
+
+    class Meta:
+        model = Profile
+        fields = ['name', 'description', 'category', 'cost', 'image']

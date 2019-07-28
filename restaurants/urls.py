@@ -9,7 +9,6 @@ urlpatterns = [
     path('', rest_views.home, name='rest-home'),
     path('about/', rest_views.about, name='rest-about'),
     path('register/', rest_views.register, name='rest-register'),
-    path('profile/', rest_views.profile, name='rest-profile'),
     path('login/', auth_views.LoginView.as_view(
         template_name='restaurants/login.html',
         redirect_authenticated_user=True,
@@ -19,5 +18,6 @@ urlpatterns = [
         template_name='restaurants/logout.html',
         extra_context={'title': 'logout', 'app': app})
          , name='rest-logout'),
-    path('new/', rest_views.FoodAddView.as_view(extra_context={'title': 'add', 'app': app}), name='rest-add')
+    path('profile/', rest_views.profile, name='rest-profile'),
+    path('add/', rest_views.food_create, name='rest-add'),
 ]
