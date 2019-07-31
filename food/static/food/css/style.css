@@ -558,6 +558,7 @@ a:hover {
 .content-base-profile{
     margin: 120px 0px 50px 0px;
     padding: 0px 50px;
+    min-height: 100vh;
 }
 
 .content-food-add{
@@ -587,4 +588,12 @@ a:hover {
 
 .list-item-active{
     border-left: 2px solid coral;
+}
+
+th, td{
+    padding: 15px 20px;
+}
+
+.food-image{
+    width: 50px;
 }

@@ -4,7 +4,7 @@
 {% block profile_content %}
 
 	<div class="content-food-list">
-        <table class="table-striped" width="100%">
+        <table class="table-striped text-center" width="100%">
             <tr>
                 <th>Name</th>
                 <th>Description</th>
@@ -13,15 +13,17 @@
                 <th>Image</th>
             </tr>
 
-            {% for food in foods %}
-                <tr>
-                    <td>food.name</td>
-                    <td>food.description</td>
-                    <td>food.category</td>
-                    <td>food.cost</td>
-                    <td>food.image</td>
-                </tr>
-            {% endfor %}
+            {% if foods|length > 0 %}
+                {% for food in foods %}
+                    <tr>
+                        <td>{{ food.name }}</td>
+                        <td>{{ food.description }}</td>
+                        <td>{{ food.category }}</td>
+                        <td>{{ food.cost }}</td>
+                        <td><img class="food-image" src="{{ food.image.url }}"></td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
         </table>
 	</div>
 

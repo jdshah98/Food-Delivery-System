@@ -1,6 +1,7 @@
 from django import forms
 from .models import Feedback
 
+
 class FeedbackForm(forms.ModelForm):
     email = forms.CharField(max_length=254, widget=forms.HiddenInput(), required=False)
     subject = forms.CharField(max_length=50, required=True)

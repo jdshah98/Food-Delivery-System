@@ -9,11 +9,11 @@
             <div class="sidebar">
                 <ul class="side-group">
                     <li class="list-item list-profile"><a href="{% url 'rest-profile' %}">PROFILE</a></li>
-                    <li class="list-item list-new"><a href="#">ADD NEW ITEMS</a></li>
-                    <li class="list-item">DELETE ITEMS</li>
-                    <li class="list-item">UPDATE ITEMS</li>
-                    <li class="list-item list-list"><a href="#">LIST ITEMS</a></li>
-                    <li class="list-item">ORDER LIST</li>
+                    <li class="list-item list-add"><a href="{% url 'rest-add' %}">ADD NEW ITEMS</a></li>
+                    <li class="list-item list-delete"><a href="{% url 'rest-delete' %}">DELETE ITEMS</a></li>
+                    <li class="list-item list-update"><a href="{% url 'rest-update' %}">UPDATE ITEMS</a></li>
+                    <li class="list-item list-list"><a href="{% url 'rest-list' %}">LIST ITEMS</a></li>
+                    <li class="list-item list-order"><a href="{% url 'rest-order' %}">ORDER LIST</a></li>
                 </ul>
             </div>
         </div>
@@ -31,9 +31,15 @@
         {% if "profile" in request.path %}
             $('.list-profile').addClass('list-item-active');
         {% elif "add" in request.path %}
-            $('.list-new').addClass('list-item-active');
+            $('.list-add').addClass('list-item-active');
+        {% elif "delete" in request.path %}
+            $('.list-delete').addClass('list-item-active');
+        {% elif "update" in request.path %}
+            $('.list-update').addClass('list-item-active');
         {% elif "list" in request.path %}
             $('.list-list').addClass('list-item-active');
+        {% elif "order" in request.path %}
+            $('.list-order').addClass('list-item-active');
         {% endif %}
     </script>
 {% endblock script %}

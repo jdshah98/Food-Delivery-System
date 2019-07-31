@@ -9,10 +9,8 @@ from food.models import Food
 def create_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
-        Food.objects.create(restaurant=instance)
 
 
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
-    instance.food.save()

@@ -26,13 +26,17 @@ class RestProfileForm(forms.ModelForm):
         self.fields['image'].required = False
 
 
-class RestFoodForm(forms.ModelForm):
-    name = forms.CharField(max_length=30, required=True)
-    description = forms.CharField(max_length=255,required=True)
-    category = forms.CharField(max_length=30, required=True)
-    cost = forms.CharField(max_length=10, required=True)
-    image = forms.ImageField(required=True)
-
-    class Meta:
-        model = Profile
-        fields = ['name', 'description', 'category', 'cost', 'image']
+# class RestFoodForm(forms.ModelForm):
+#     name = forms.CharField(max_length=30)
+#     description = forms.CharField(max_length=255)
+#     category = forms.CharField(max_length=30)
+#     cost = forms.CharField(max_length=10)
+#     image = forms.ImageField()
+#
+#     class Meta:
+#         model = Profile
+#         fields = ['name', 'description', 'category', 'cost', 'image']
+#
+#     def __init__(self, *args, **kwargs):
+#         super(RestFoodForm, self).__init__(*args, **kwargs)
+#         self.fields['image'].required = False

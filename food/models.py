@@ -17,25 +17,24 @@ class Feedback(models.Model):
 
 
 class Food(models.Model):
-    name = models.CharField(max_length=30, null=True)
-    description = models.CharField(max_length=255, null=True)
-    category = models.CharField(max_length=30,null=True)
-    cost = models.CharField(max_length=10,null=True)
-    image = models.ImageField(default='default.jpg', upload_to='food_pics')
+    name = models.CharField(max_length=30)
+    description = models.CharField(max_length=255)
+    category = models.CharField(max_length=30)
+    cost = models.CharField(max_length=10)
+    image = models.ImageField(upload_to='food_pics/')
     restaurant = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return "done"
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('rest-detail', kwargs={'pk': self.pk})
 
     def save(self, *args, **kwargs):
         super().save()
-
         img = Image.open(self.image.path)
 
         if img.height > 300 or img.width > 300:
             output_size = (300, 300)
             img.thumbnail(output_size)
             img.save(self.image.path)
-
-    def get_absolute_url(self, *args, **kwargs):
-        return reverse('food-detail', kwargs={'pk': self.pk})

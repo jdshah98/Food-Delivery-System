@@ -6,19 +6,16 @@
 	<div class="content-food-add">
 		{% if form.errors %}
 			{% for field in form %}
+				{{ field.label_tag }}
 				{% for error in field.errors %}
 					<div class="alert alert-danger">
+                        {{ field. }}
 						<strong>{{ error|escape }}</strong>
 					</div>
 				{% endfor %}
 			{% endfor %}
-			{% for error in form.non_field_errors %}
-				<div class="alert alert-danger">
-					<strong>{{ error|escape }}</strong>
-				</div>
-			{% endfor %}
 		{% endif %}
-		<form method="POST">
+		<form method="POST" enctype="multipart/form-data">
 			<!-- This is important for security purpose -->
 			{% csrf_token %}
 			<fieldset class="form-group">

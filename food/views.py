@@ -31,7 +31,7 @@ def about(request):
             return redirect('food-about')
     else:
         form = FeedbackForm()
-        return render(request, 'food/about.html', {'title': 'about', 'form': form, 'app' : app})
+        return render(request, 'food/about.html', {'title': 'about', 'form': form, 'app': app})
 
 
 def cart(request):

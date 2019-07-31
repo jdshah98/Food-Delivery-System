@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
-from .forms import RestRegisterForm, RestProfileForm, RestFoodForm
+from .forms import RestRegisterForm, RestProfileForm
 from django.contrib import messages
 from food.forms import FeedbackForm
 from users.models import UserType
 from django.contrib.auth.models import User
+from food.models import Food
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse
 
 # Create your views here.
 app = settings.APP_NAME
@@ -63,13 +67,37 @@ def profile(request):
     return render(request, 'restaurants/profile.html', {'title': 'profile', 'app': app, 'form': p_form})
 
 
-def food_create(request):
-    if request.method == 'POST':
-        food_form = RestFoodForm(request.POST, request.FILES, instance=request.food)
-        if food_form.is_valid():
-            food_form.save()
-            messages.success(request, f'Your Profile has been Updated Successfully!')
-            return redirect('rest-add')
-    else:
-        food_form = RestFoodForm(instance=request.food)
-    return render(request, 'restaurants/food_form.html', {'title': 'profile', 'app': app, 'form': food_form})
+class FoodCreateView(LoginRequiredMixin, CreateView):
+    model = Food
+    fields = ['name', 'description', 'category', 'cost', 'image']
+    template_name = 'restaurants/food_form.html'
+
+    def get_success_url(self):
+        return reverse('rest-list')
+
+    def form_valid(self, form):
+        form.instance.restaurant = self.request.user
+        return super().form_valid(form)
+
+
+class FoodListView(ListView):
+    model = Food
+    template_name = 'restaurants/food_list.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        return {'title': 'Your Menu List', 'app': app, 'foods': Food.objects.filter(restaurant=self.request.user)}
+
+
+class FoodDetailView(DetailView):
+    model = Food
+    template_name = 'restaurants/food_detail.html'
+
+
+class FoodUpdateView(UpdateView):
+    model = Food
+    template_name = 'restaurants/food_update.html'
+
+
+class FoodDeleteView(DeleteView):
+    model = Food
+    template_name = 'restaurants/food_delete.html'
