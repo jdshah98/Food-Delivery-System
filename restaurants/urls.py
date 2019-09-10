@@ -24,8 +24,8 @@ urlpatterns = [
         extra_context={'title': 'Add Food', 'app': app}), name='rest-add'),
     path('restaurant/foods/<int:pk>/', rest_views.FoodDetailView.as_view(), name='rest-detail'),
     path('restaurant/list/', rest_views.FoodListView.as_view(), name='rest-list'),
-    path('restaurant/delete/', rest_views.FoodDeleteView.as_view(), name='rest-delete'),
-    path('restaurant/update/', rest_views.FoodUpdateView.as_view(), name='rest-update'),
+    path('restaurant/foods/<int:pk>/delete/', rest_views.FoodDeleteView.as_view(), name='rest-delete'),
+    path('restaurant/foods/<int:pk>/update/', rest_views.FoodUpdateView.as_view(), name='rest-update'),
     path('restaurant/order/', rest_views.FoodListView.as_view(), name='rest-order'),
 ]
 

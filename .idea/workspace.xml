@@ -2,31 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f506a42-551d-4685-80f0-4e378bc2258c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/food/migrations/0008_auto_20190731_1729.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/food/migrations/0009_auto_20190731_1818.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/food_pics/jainam.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/food_pics/jainam_0V9qWUa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/food_pics/jainam_NJUNKp1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/food_pics/jainam_gJ766zo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/food/migrations/0010_auto_20190801_0028.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/food/migrations/0011_food_date_posted.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/food/migrations/0012_auto_20190801_1825.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/food_pics/jainam_W7zRrY9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurants/templates/restaurants/food_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurants/templates/restaurants/food_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurants/templates/restaurants/food_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/food/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/food/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/food/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/food/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/food/static/food/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/food/static/food/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/food/templates/food/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/food/templates/food/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food/templates/food/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/food/templates/food/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/food/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/food/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/food/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/food/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/food_express/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/food_express/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/default.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurants/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurants/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restaurants/templates/restaurants/base_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants/templates/restaurants/base_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurants/templates/restaurants/food_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants/templates/restaurants/food_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restaurants/templates/restaurants/food_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants/templates/restaurants/food_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurants/templates/restaurants/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants/templates/restaurants/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurants/templates/restaurants/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants/templates/restaurants/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restaurants/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restaurants/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/signals.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +49,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../food_mysql" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/restaurants/templates/restaurants" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">

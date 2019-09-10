@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import FeedbackForm
 from django.contrib import messages
 from django.conf import settings
+from django.views.generic import ListView
+from .models import Food
 
 # Create your views here.
 app = settings.APP_NAME
@@ -11,8 +13,12 @@ def home(request):
     return render(request, 'food/home.html', {'title': 'home', 'app' : app})
 
 
-def menu(request):
-    return render(request, 'food/menu.html', {'title': 'menu', 'app' : app})
+class MenuView(ListView):
+    model = Food
+    template_name = 'food/menu.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        return {'title': 'Menu', 'app': app, 'foods': Food.objects.all()}
 
 
 def about(request):

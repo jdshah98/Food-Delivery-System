@@ -1,5 +1,6 @@
-from django.db import models
+from django.db import models, connection
 from PIL import Image
+from django.utils import timezone
 from users.models import User
 from django.urls import reverse
 
@@ -17,11 +18,13 @@ class Feedback(models.Model):
 
 
 class Food(models.Model):
+    id=models.AutoField(primary_key=True,default=0)
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=255)
     category = models.CharField(max_length=30)
     cost = models.CharField(max_length=10)
-    image = models.ImageField(upload_to='food_pics/')
+    image = models.ImageField(default='default.jpg', upload_to='food_pics/')
+    date_posted = models.DateTimeField(default=timezone.now)
     restaurant = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -34,7 +37,12 @@ class Food(models.Model):
         super().save()
         img = Image.open(self.image.path)
 
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
+        if img.height > 500 or img.width > 500:
+            output_size = (400, 300)
             img.thumbnail(output_size)
             img.save(self.image.path)
+
+    @classmethod
+    def truncate(cls):
+        with connection.cursor() as cursor:
+            cursor.execute('TRUNCATE TABLE "{0}" CASCADE'.format(cls._meta.db_table))

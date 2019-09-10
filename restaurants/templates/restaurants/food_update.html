@@ -1,0 +1,31 @@
+{% extends "restaurants/base_profile.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block profile_content %}
+
+	<div class="content-food-add">
+		{% if form.errors %}
+			{% for field in form %}
+				{{ field.label_tag }}
+				{% for error in field.errors %}
+					<div class="alert alert-danger">
+                        {{ field. }}
+						<strong>{{ error|escape }}</strong>
+					</div>
+				{% endfor %}
+			{% endfor %}
+		{% endif %}
+		<form method="POST" enctype="multipart/form-data">
+			<!-- This is important for security purpose -->
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Add Food</legend>
+				{{ form|crispy }}
+			</fieldset>
+			<div class="form-group">
+				<button class="btn btn-outline-info btn-add" type="submit">Add</button>
+			</div>
+		</form>
+	</div>
+
+{% endblock profile_content %}

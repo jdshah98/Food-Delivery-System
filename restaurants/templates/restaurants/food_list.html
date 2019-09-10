@@ -6,6 +6,7 @@
 	<div class="content-food-list">
         <table class="table-striped text-center" width="100%">
             <tr>
+                <th>Food Id</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Category</th>
@@ -16,6 +17,7 @@
             {% if foods|length > 0 %}
                 {% for food in foods %}
                     <tr>
+                        <td>{{ food.id }}</td>
                         <td>{{ food.name }}</td>
                         <td>{{ food.description }}</td>
                         <td>{{ food.category }}</td>

@@ -7,7 +7,7 @@ from users.models import UserType
 from django.contrib.auth.models import User
 from food.models import Food
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse
 
 # Create your views here.
@@ -93,11 +93,34 @@ class FoodDetailView(DetailView):
     template_name = 'restaurants/food_detail.html'
 
 
-class FoodUpdateView(UpdateView):
+class FoodUpdateView(UpdateView, UserPassesTestMixin):
     model = Food
+    fields = ['name', 'description', 'category', 'cost', 'image']
     template_name = 'restaurants/food_update.html'
+
+    def get_success_url(self):
+        return reverse('rest-list')
+
+    def form_valid(self, form):
+        form.instance.restaurant = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        food = self.get_object()
+        if self.request.user == food.restaurant:
+            return True
+        return False
 
 
 class FoodDeleteView(DeleteView):
     model = Food
     template_name = 'restaurants/food_delete.html'
+
+    def get_success_url(self):
+        return reverse('rest-list')
+
+    def test_func(self):
+        food = self.get_object()
+        if self.request.user == food.restaurant:
+            return True
+        return False
